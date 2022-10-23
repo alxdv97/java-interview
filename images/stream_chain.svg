@@ -1,0 +1,224 @@
+<!-- 
+  Copyright (c) 2016, Tagir Valeev 
+  This work is licensed under a Creative Commons Attribution 4.0 International License.
+  https://creativecommons.org/licenses/by/4.0/
+-->
+<svg version="1.1"
+     width="280" height="920"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+  <linearGradient id="gray_grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:#B0B3B6;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#D0D3D6;stop-opacity:1" />
+  </linearGradient>
+  <linearGradient id="squash_grad" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" style="stop-color:#101090;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#8080FF;stop-opacity:1" />
+  </linearGradient>
+  <linearGradient id="packman_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#FF8080;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#C00000;stop-opacity:1" />
+  </linearGradient>
+</defs>
+<symbol id="connector">
+  <path d="M95,3 l60,0 l0,20 l-60,0 z" fill="url(#gray_grad)" stroke-width="3" stroke="#333"/>
+</symbol>
+<g id="source-component" transform="translate(0,0)">
+  <path d="M100,0 l50,0 l0,40 l-50,0 z" fill="url(#gray_grad)" stroke-width="3" stroke="#333"/>
+</g>
+<g id="map-component" transform="translate(0,40)">
+  <symbol id="map-contour">
+      <path d="M100,20 q0,20 -20,20 l-50,0 q-20,0 -20,20 l0,120 q0,20 20,20 l50,0 q20,0 20,20 l50,0 q0,-20 20,-20 l50,0 q20,0 20,-20 l0,-120 q0,-20 -20,-20 l-50,0 q-20,0 -20,-20"/>
+  </symbol>
+  <use xlink:href="#map-contour" fill="#CCC"/>
+
+
+  <path fill="yellow" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="yellow_map"
+        from="M110,0 l30,0 l0,10 l-30,0 z" to="M110,88 l30,0 l0,10 l-30,0 z" begin="0;yellow_map_3.end+2000ms" dur="400ms" fill="freeze"/>
+    <animate attributeType="XML" attributeName="d" id="yellow_map_2"
+        to="M118,110 l15,0 l0,20 l-15,0 z" begin="yellow_map.end" dur="100ms" fill="freeze"/>
+    <animate attributeType="XML" attributeName="d" id="yellow_map_3"
+        to="M118,220 l15,0 l0,20 l-15,0 z" begin="yellow_map_2.end" dur="500ms" fill="freeze"/>
+  </path>
+
+  <path fill="green" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="green_map"
+        from="M110,0 l30,0 l0,10 l-30,0 z" to="M110,88 l30,0 l0,10 l-30,0 z" begin="1000ms;green_map_3.end+2000ms" dur="400ms" fill="freeze"/>
+    <animate attributeType="XML" attributeName="d" id="green_map_2"
+        to="M118,110 l15,0 l0,20 l-15,0 z" begin="green_map.end" dur="100ms" fill="freeze"/>
+    <animate attributeType="XML" attributeName="d" id="green_map_3"
+        to="M118,220 l15,0 l0,20 l-15,0 z" begin="green_map_2.end" dur="500ms" fill="freeze"/>
+  </path>
+
+  <path fill="blue" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="blue_map"
+        from="M110,0 l30,0 l0,10 l-30,0 z" to="M110,88 l30,0 l0,10 l-30,0 z" begin="2000ms;blue_map_3.end+2000ms" dur="400ms" fill="freeze"/>
+    <animate attributeType="XML" attributeName="d" id="blue_map_2"
+        to="M118,110 l15,0 l0,20 l-15,0 z" begin="blue_map.end" dur="100ms" fill="freeze"/>
+    <animate attributeType="XML" attributeName="d" id="blue_map_3"
+        to="M118,220 l15,0 l0,20 l-15,0 z" begin="blue_map_2.end" dur="500ms" fill="freeze"/>
+  </path>
+
+  <path d="M10,100 l40,0 l0,-20 l20,0 l0,80 l-20,0 l0,-20 l-40,0" fill="url(#squash_grad)" stroke="yellow" stroke-width="3">
+    <animate attributeType="XML" attributeName="d" id="left_close"
+        from="M10,100 l40,0 l0,-20 l20,0 l0,80 l-20,0 l0,-20 l-40,0" 
+          to="M10,100 l88,0 l0,-20 l20,0 l0,80 l-20,0 l0,-20 l-88,0" begin="300ms;left_open.end+300ms" dur="200ms" fill="freeze"/>
+    <animate attributeType="XML" attributeName="d" id="left_open"
+          to="M10,100 l40,0 l0,-20 l20,0 l0,80 l-20,0 l0,-20 l-40,0" begin="left_close.end" dur="500ms" fill="freeze"/>
+  </path>
+  <path d="M240,100 l-40,0 l0,-20 l-20,0 l0,80 l20,0 l0,-20 l40,0" fill="url(#squash_grad)" stroke="yellow" stroke-width="3">
+    <animate attributeType="XML" attributeName="d" id="right_close"
+        from="M240,100 l-40,0 l0,-20 l-20,0 l0,80 l20,0 l0,-20 l40,0"
+          to="M240,100 l-88,0 l0,-20 l-20,0 l0,80 l20,0 l0,-20 l88,0" begin="300ms;left_open.end+300ms" dur="200ms" fill="freeze"/>
+    <animate attributeType="XML" attributeName="d" id="right_open"
+          to="M240,100 l-40,0 l0,-20 l-20,0 l0,80 l20,0 l0,-20 l40,0" begin="left_close.end" dur="500ms" fill="freeze"/>
+  </path>
+
+  <use xlink:href="#map-contour" fill-opacity="0" stroke-width="3" stroke="#333"/>
+  <use xlink:href="#connector" y="-3"/>
+</g>
+<g id="peek-component" transform="translate(0,260)">
+  <path d="M100,20 q0,20 -20,20 q-20,0 -20,20 l0,120 q0,20 20,20 q20,0 20,20 l50,0 q0,-20 20,-20 l80,0 q20,0 20,-20 l0,-120 q0,-20 -20,-20 l-80,0 q-20,0 -20,-20" fill="#CCC" stroke-width="3" stroke="#333"/>
+
+  <path d="M118,0 l15,0 l0,20 l-15,0 z" fill="yellow" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="clock_yellow"
+        from="M118,0 l15,0 l0,20 l-15,0 z" to="M118,220 l15,0 l0,20 l-15,0 z" begin="yellow_map_3.end;clock_blue.end" dur="1000ms" fill="remove"/>
+  </path>
+  <path d="M118,0 l15,0 l0,20 l-15,0 z" fill="green" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="clock_green"
+        from="M118,0 l15,0 l0,20 l-15,0 z" to="M118,220 l15,0 l0,20 l-15,0 z" begin="clock_yellow.end" dur="1000ms" fill="freeze"/>
+  </path>
+  <path d="M118,0 l15,0 l0,20 l-15,0 z" fill="blue" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="clock_blue"
+        from="M118,0 l15,0 l0,20 l-15,0 z" to="M118,220 l15,0 l0,20 l-15,0 z" begin="clock_green.end" dur="1000ms" fill="freeze"/>
+  </path>
+
+  <path d="M61,113 l10,0 l0,5 l2,0 l0,3 l-2,0 l0,5 l-10,0 z" fill="#555" stroke-width="3" stroke="#333"/>
+
+  <path d="M161,113 l10,0 l0,13 l-10,0 z" fill="#555" stroke-width="3" stroke="#333"/>
+
+  <circle cx="210" cy="120" r="38" fill="#F5F5F5" stroke-width="3" stroke="#333"/>
+  <symbol id="tick" viewBox="-40 -40 40 40">
+    <line x1="0" y1="-34" x2="0" y2="-38" stroke-width="3" stroke="#333"/>
+  </symbol>
+
+  <line x1="74" y1="120" x2="160" y2="120" stroke-width="2" stroke="#F33">
+    <set attributeName="x2" attributeType="XML" to="118" id="laser_close" begin="clock_yellow.begin+400ms;laser_open.begin+800ms"/>
+    <set attributeName="x2" attributeType="XML" to="160" id="laser_open" begin="laser_close.begin+200ms"/>
+  </line>
+
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(30 210 120)"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(60 210 120)"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(90 210 120)"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(120 210 120)"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(150 210 120)"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(180 210 120)"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(210 210 120)"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(240 210 120)"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(270 210 120)"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(300 210 120)"/>
+  <use xlink:href="#tick" x="130" y="80" width="80" height="80" transform="rotate(330 210 120)"/>
+
+  <path d="M208,120 l3,0 l-3,-30 l-3,30 z" fill="#555" transform="rotate(0 210 120)">
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 210 120" to="30 210 120" id="arr1" dur="200ms" begin="1400ms;arr12.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="60 210 120" id="arr2" dur="200ms" begin="arr1.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="90 210 120" id="arr3" dur="200ms" begin="arr2.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="120 210 120" id="arr4" dur="200ms" begin="arr3.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="150 210 120" id="arr5" dur="200ms" begin="arr4.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="180 210 120" id="arr6" dur="200ms" begin="arr5.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="210 210 120" id="arr7" dur="200ms" begin="arr6.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="240 210 120" id="arr8" dur="200ms" begin="arr7.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="270 210 120" id="arr9" dur="200ms" begin="arr8.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="300 210 120" id="arr10" dur="200ms" begin="arr9.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="330 210 120" id="arr11" dur="200ms" begin="arr10.begin+1000ms" fill="freeze"/>
+    <animateTransform attributeName="transform" attributeType="XML" type="rotate" to="360 210 120" id="arr12" dur="200ms" begin="arr11.begin+1000ms" fill="freeze"/>
+  </path>
+
+  <use xlink:href="#connector" y="-3"/>
+</g>
+<g id="filter-component" transform="translate(0,480)">
+  <path d="M100,20 q0,20 -20,20 q-20,0 -20,20 l0,120 q0,20 20,20 q20,0 20,20 l50,0 q0,-20 20,-20 l80,0 q20,0 20,-20 l0,-120 q0,-20 -20,-20 l-80,0 q-20,0 -20,-20" fill="#CCC" stroke-width="3" stroke="#333"/>
+
+  <path d="M118,0 l15,0 l0,20 l-15,0 z" fill="yellow" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="packman_yellow"
+        from="M118,0 l15,0 l0,20 l-15,0 z" to="M118,120 l15,0 l0,20 l-15,0 z" begin="clock_yellow.end;packman_blue.end" dur="500ms" fill="remove"/>
+  </path>
+  <path d="M118,0 l15,0 l0,20 l-15,0 z" fill="green" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="packman_green"
+        from="M118,0 l15,0 l0,20 l-15,0 z" to="M118,220 l15,0 l0,20 l-15,0 z" begin="packman_yellow.end+500ms" dur="1000ms" fill="freeze"/>
+  </path>
+  <path d="M118,0 l15,0 l0,20 l-15,0 z" fill="blue" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="packman_blue"
+        from="M118,0 l15,0 l0,20 l-15,0 z" to="M118,220 l15,0 l0,20 l-15,0 z" begin="packman_green.end" dur="1000ms" fill="freeze"/>
+  </path>
+
+  <path d="M200,120 l-54,-1 a56,56 0 1,1 0,2 z"
+        fill="url(#packman_grad)" stroke="blue" stroke-width="3" >
+    <animate id="packman_body_close" attributeType="XML" attributeName="d"
+       from="M200,120 l-40,-40 a56,56 0 1,1 0,80 z"
+         to="M150,120 l-54,-1 a56,56 0 1,1 0,2 z"
+      begin="packman_body_open.end+100ms" dur="100ms" fill="freeze"
+        />
+    <animate id="packman_body_retreat" attributeType="XML" attributeName="d"
+         to="M200,120 l-54,-1 a56,56 0 1,1 0,2 z"
+      begin="packman_body_close.end+200ms" dur="300ms" fill="freeze"
+        />
+    <animate id="packman_body_open" attributeType="XML" attributeName="d"
+         to="M200,120 l-40,-40 a56,56 0 1,1 0,80 z"
+      begin="packman_yellow.begin" dur="300ms" fill="freeze"
+        />
+  </path>
+  <ellipse cx="200" cy="90" rx="5" ry="5" fill="yellow" stroke="blue" stroke-width="3">
+    <animate id="packman_eye_close" attributeType="XML" attributeName="cx"
+         to="150"
+      begin="packman_body_open.end+100ms" dur="100ms" fill="freeze"
+        />
+    <animate id="packman_eye_retreat" attributeType="XML" attributeName="cx"
+         to="200"
+      begin="packman_body_close.end+200ms" dur="300ms" fill="freeze"
+        />
+  </ellipse>
+  <use xlink:href="#connector" y="-3"/>
+</g>
+<g id="forEach-component" transform="translate(0,700)">
+  <path d="M100,20 q0,20 -20,20 l-40,0 q-20,0 -20,20 l0,120 q0,20 20,20 l170,0 q20,0 20,-20 l0,-120 q0,-20 -20,-20 l-40,0 q-20,0 -20,-20" fill="#CCC" stroke-width="3" stroke="#333"/>
+
+  <path d="M118,0 l15,0 l0,20 l-15,0 z" fill="green" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="display_green"
+        from="M118,0 l15,0 l0,20 l-15,0 z" to="M118,88 l15,0 l0,20 l-15,0 z" begin="packman_green.end;display_blue.end+1600ms" dur="400ms" fill="freeze"/>
+  </path>
+  <path d="M118,0 l15,0 l0,20 l-15,0 z" fill="blue" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="display_blue"
+        from="M118,0 l15,0 l0,20 l-15,0 z" to="M118,88 l15,0 l0,20 l-15,0 z" begin="display_green.end+600ms" dur="400ms" fill="freeze"/>
+  </path>
+
+  <path d="M115,140 l0,10 q0,5 -5,5 l-5,0 q-3,0 -3,3 l46,0 q0,-3 -3,-3 l-5,0 q-5,0 -5,-5 l0,-10" fill="#333" stroke-width="3" stroke="#111"/>
+
+  <path d="M70,80 l0,60 q0,5 5,5 l100,0 q5,0 5,-5 l0,-60 q0,-5 -5,-5 l-100,0 q-5,0 -5,5" fill="#333" stroke-width="3" stroke="#111"/>
+  <path d="M75,85 l0,50 q0,5 5,5 l90,0 q5,0 5,-5 l0,-50 q0,-5 -5,-5 l-90,0 q-5,0 -5,5" fill="#EEE" stroke-width="3" stroke="#666"/>
+
+  <path d="M125,110 l0,0 l0,0 l0,0 z" fill="green" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="display_green_2"
+        from="M125,110 l0,0 l0,0 l0,0 z" to="M110,90 l30,0 l0,40 l-30,0 z" begin="display_green.end" dur="300ms"/>
+    <animate attributeType="XML" attributeName="d" id="display_green_3"
+        from="M110,90 l30,0 l0,40 l-30,0 z" to="M118,100 l15,0 l0,20 l-15,0 z" begin="display_green_2.end" dur="200ms"/>
+    <animate attributeType="XML" attributeName="d"
+        from="M118,100 l15,0 l0,20 l-15,0 z" to="M118,100 l15,0 l0,20 l-15,0 z" begin="display_green_3.end" dur="500ms" fill="remove"/>
+  </path>
+
+  <path d="M125,110 l0,0 l0,0 l0,0 z" fill="blue" stroke-width="3" stroke="#963">
+    <animate attributeType="XML" attributeName="d" id="display_blue_2"
+        from="M125,110 l0,0 l0,0 l0,0 z" to="M110,90 l30,0 l0,40 l-30,0 z" begin="display_blue.end" dur="300ms"/>
+    <animate attributeType="XML" attributeName="d" id="display_blue_3"
+        from="M110,90 l30,0 l0,40 l-30,0 z" to="M118,100 l15,0 l0,20 l-15,0 z" begin="display_blue_2.end" dur="200ms"/>
+    <animate attributeType="XML" attributeName="d"
+        from="M118,100 l15,0 l0,20 l-15,0 z" to="M118,100 l15,0 l0,20 l-15,0 z" begin="display_blue_3.end" dur="500ms" fill="remove"/>
+  </path>
+
+  <use xlink:href="#connector" y="-3"/>
+</g>
+
+</svg>
