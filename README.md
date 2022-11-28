@@ -1388,7 +1388,6 @@ public class GreatestOne {
             }
         }
         return max;
-
     }
 }
 ```
@@ -1411,7 +1410,6 @@ public class GreatestOne {
         
         return array[array.length - 1]; // если в цикле пика найдено не было - значит бОльший элемент - последний, 
         // потому что последовательность возрастающая
-
     }
 }
 ```
