@@ -1414,3 +1414,29 @@ public class GreatestOne {
 }
 ```
 
+#### Перевернуть строку
+С использованием StringBuilder:
+```java
+public class StringFormatter {
+    public static String reverseString(String str) {
+        StringBuilder sb = new StringBuilder(str);
+        sb.reverse();
+        return sb.toString(); // можно в одну строку, соединив вызовы методов
+    }
+}  
+```
+Без использования StringBuilder:
+```java
+public class StringFormatter {
+    public static String reverseString(String str) {
+        char ch[] = str.toCharArray(); // преобразуем строку в массив char
+        String rev = "";
+        for (int i = ch.length - 1; i >= 0; i--) { // идем обратно по массиву char'ов
+            rev += ch[i]; // циклически конкатенируем строку с элементами (так делать плохо, можно заменить 
+            // на создание char[] аналогичной длины и записывание туда элементов сначала, 
+            // а потом преобразовать char[] в строку)
+        }
+        return rev;
+    }
+}  
+```
