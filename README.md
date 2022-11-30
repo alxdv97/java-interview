@@ -800,7 +800,7 @@ class EmailConfig {
 
 ```
 
-> Популярный вопрос: `@Bean` vs. `@Component` vs. `@ComponentScan` vs. `@Configuration` vs. @Autowired
+> Популярный вопрос: `@Bean` vs. `@Component` vs. `@ComponentScan` vs. `@Configuration` vs. `@Autowired`
 > 1. `@Component` - аннотация уровня **класса**, которая указывает спрингу создать бин из этого класса. 
 > Используется для написания **собственных бинов**
 > 2. `@Bean` - аннотация уровня **метода в классе, помеченном `@Configuration`**, которая указывает спрингу, как создавать
