@@ -1044,6 +1044,7 @@ HTTP (_Hypertext transition protocol_) - протокол взаимодейст
 
 Основной состав HTTP-запроса:
 
+- метод (`GET`, `POST`, `PUT`, `DELETE` и тд.)
 - url - адрес веб-сайта (`http://vk.com`)
 - path variable - переменная пути (`/application/123456` - 123456 является path variable)
 - request params - параметры запроса (`http://vk.com?id=123456&view=mobile` - ?id=123456&view=mobile - параметры 
